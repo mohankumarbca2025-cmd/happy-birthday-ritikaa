@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ritika 🎉</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        overflow-x: hidden;
+        color: #fff;
+        text-align: center;
+    }
+
+    /* 🔐 Unlock Screen */
+    #unlockScreen {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #ff4da6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 100;
+        transition: 1s;
+    }
+
+    #unlockScreen h1 {
+        font-size: 2rem;
+        opacity: 0.8;
+    }
+
+    #unlockBtn {
+        margin-top: 20px;
+        padding: 12px 25px;
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #unlockBtn:hover {
+        background: white;
+        color: #020202;
+    }
+
+    /* Hide main initially */
+    #mainContent {
+        opacity: 0;
+        transition: 2s;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 30px;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #fff; }
+        to { text-shadow: 0 0 25px #ff4da6; }
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .photo {
+        width: 250px;
+        height: 400px;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 0 25px rgba(255,255,255,0.8);
+        margin-top: 20px;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    .message {
+        background: rgba(255,255,255,0.15);
+        padding: 25px;
+        color: black;
+        border-radius: 20px;
+        margin-top: 30px;
+        line-height: 1.6;
+        font-size: 1.2rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .footer {
+        margin-top: 40px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -10px;
+        color: red;
+        animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 Unlock Screen -->
+<div id="unlockScreen">
+    <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">✨ Something Special Awaits... ✨</h1>
+    <button id="unlockBtn">Tap to Unlock 🔐</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+<div class="container">
+    <h1>🎉 Happy 21st Birthday Ritika 🎂</h1>
+    <h2>30 March 2026 💖</h2>
+
+    <img src="img/ritika.jpg" alt="Ritika" class="photo">
+
+    <div class="message">
+        Hey Tera Manav this side 😂,<br><br>
+
+        Wish you a very Happy Birthday Ritikaaa ❤️! May god fulfil all your wishes, you have an endless supply of happy days and your dreams turns into reality,<br><br>
+
+        Thankyou for always being so kind and reason behind everyone smile, Always connected to your roots , A true friend to everyone, You always be yourself and that's your vibe We all are very lucky, we are not in city of gems still we found a real gem.<br><br>
+
+        Happy Birthday againnn 🥳
+    </div>
+
+    <div class="footer">
+        💕 Made with love 💕
+    </div>
+</div>
+</div>
+
+<script>
+    const unlockBtn = document.getElementById("unlockBtn");
+    const unlockScreen = document.getElementById("unlockScreen");
+    const mainContent = document.getElementById("mainContent");
+
+    unlockBtn.onclick = () => {
+        unlockScreen.style.opacity = "0";
+        setTimeout(() => {
+            unlockScreen.style.display = "none";
+            mainContent.style.opacity = "1";
+        }, 800);
+    };
+
+    // Floating hearts
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html> 
